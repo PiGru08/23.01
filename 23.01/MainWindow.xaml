@@ -6,7 +6,45 @@
         xmlns:local="clr-namespace:_23._01"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="_Plik">
+            <MenuItem Header="Nowy" Click="MenuItem_Click_Nowy"></MenuItem>
+            <MenuItem Header="Otwórz" Click="MenuItem_Click_Otworz">
+                
+            </MenuItem>
+            <MenuItem Header="Zapisz" Click="MenuItem_Click_Zapisz"></MenuItem>
+            <MenuItem Header="Zapisz jako" Click="MenuItem_Click_Zapisz_Jako"></MenuItem>
+            <MenuItem Header="Zamknij" Click="MenuItem_Click_Zamknij"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="E_dycja">
+                <MenuItem Header="Kopiuj"
+                          Command="ApplicationCommands.Copy"
+                          ></MenuItem>
+            
+                <MenuItem Header="Kopiuj"
+                          Command="ApplicationCommands.Cut"
+                          ></MenuItem>
+                 
+                    <MenuItem Header="Wklej"
+                          Command="ApplicationCommands.Paste"
+                          ></MenuItem>
+               
+                <MenuItem Header="Cofnij"
+                          Command="ApplicationCommands.Undo"
+                          ></MenuItem>
+                    </MenuItem>
+            <MenuItem Header="Fo_rmat"></MenuItem>
+            <MenuItem Header="I_nfo">
+                <MenuItem Header="O aplikacji" Click="MenuItem_Click_O_Aplikacji" />
+                <MenuItem Header="O autorze" Click="MenuItem_Click_O_Autorze" />
 
-    </Grid>
+            </MenuItem>
+        </Menu>
+        <TextBox x:Name="WpisanyText_TextBox" AcceptsReturn="True"
+                 TextWrapping="WrapWithOverflow"
+                 VerticalScrollBarVisibility="Auto"
+                 ></TextBox>
+    </DockPanel>
+    <!--Podłoga przed literką w header tworzy skrót klawiszowy aby otworzyć dany element(literka taka przed jaką daliśmy podłoge) -->
 </Window>

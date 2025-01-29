@@ -34,7 +34,22 @@
                           Command="ApplicationCommands.Undo"
                           ></MenuItem>
                     </MenuItem>
-            <MenuItem Header="Fo_rmat"></MenuItem>
+            <MenuItem Header="Fo_rmat">
+                <MenuItem Header="Dzień/Noc" IsCheckable="True" IsChecked="True" Checked="MenuItem_Checked_Dzien" Unchecked="MenuItem_Unchecked_Noc">
+                    
+                </MenuItem>
+                <MenuItem Header="Kolor Czcionki">
+                    <MenuItem Header="Czerwony" Click="MenuItem_Click_CZerwony"/>
+                    <MenuItem Header="Zielony" Click="MenuItem_Click_Zielony" />
+                    <MenuItem Header="Dowolna" Click="MenuItem_Click_Dowolna"/>
+                </MenuItem>
+                <MenuItem Header="Zmień rozmiar">
+                    <MenuItem Header="++" Click="MenuItem_Click_Zwieksz"/>
+                    <MenuItem Header="--" Click="MenuItem_Click_Zmniejsz"/>
+                </MenuItem>
+
+
+            </MenuItem>
             <MenuItem Header="I_nfo">
                 <MenuItem Header="O aplikacji" Click="MenuItem_Click_O_Aplikacji" />
                 <MenuItem Header="O autorze" Click="MenuItem_Click_O_Autorze" />

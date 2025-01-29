@@ -22,12 +22,13 @@ namespace _23._01
     /// </summary>
     public partial class MainWindow : Window
     {
+        
         public string NazwaPliku { get; set; } = "";
         public MainWindow()
         {
             InitializeComponent();
         }
-
+        
         private void MenuItem_Click_Nowy(object sender, RoutedEventArgs e)
         {
             WpisanyText_TextBox.Text = "";
@@ -106,6 +107,62 @@ namespace _23._01
             WindowApka windowApka = new WindowApka();
             windowApka.ShowDialog();//showDialog: Nie da się nic klikać w podstawowym oknie, nie jak przy dialog
         }
-        
+
+        private void MenuItem_Checked_Dzien(object sender, RoutedEventArgs e)
+        {
+            if (WpisanyText_TextBox != null)
+            {
+                WpisanyText_TextBox.Foreground = Brushes.Black;
+                WpisanyText_TextBox.Background = Brushes.White;
+
+            }  
+           
+        }
+
+        private void MenuItem_Unchecked_Noc(object sender, RoutedEventArgs e)
+        {
+            if (WpisanyText_TextBox != null)
+            {
+                WpisanyText_TextBox.Foreground = Brushes.White;
+                WpisanyText_TextBox.Background = Brushes.Black;
+
+            }
+        }
+
+        private void MenuItem_Click_CZerwony(object sender, RoutedEventArgs e)
+        {
+            if(WpisanyText_TextBox != null)
+            {
+                WpisanyText_TextBox.Foreground = Brushes.Red;
+            }
+        }
+
+        private void MenuItem_Click_Zielony(object sender, RoutedEventArgs e)
+        {
+            if (WpisanyText_TextBox != null)
+            {
+                WpisanyText_TextBox.Foreground = Brushes.Green;
+            }
+        }
+
+        private void MenuItem_Click_Dowolna(object sender, RoutedEventArgs e)
+        {
+            Window_Kolor window_Kolor = new Window_Kolor();
+            window_Kolor.ShowDialog();
+            Color color = new Color();
+            color = Color.FromRgb(window_Kolor.R_color, window_Kolor.G_color, window_Kolor.B_color);
+            WpisanyText_TextBox.Foreground = new SolidColorBrush(color);
+        }
+
+        private void MenuItem_Click_Zwieksz(object sender, RoutedEventArgs e)
+        {
+
+            WpisanyText_TextBox.FontSize += 5;
+        }
+
+        private void MenuItem_Click_Zmniejsz(object sender, RoutedEventArgs e)
+        {
+            WpisanyText_TextBox.FontSize -=5;
+        }
     }
 }
